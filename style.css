@@ -20,24 +20,91 @@ body {
 h1 {
   position: absolute;
   top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 2rem;
   color: #576a8f;
   margin-bottom: 3rem;
 }
 
-#countdown-p {
-  color: #576a8f;
-  font-size: 4rem;
-  font-weight: 600;
+.container {
   text-align: center;
-  padding: 40px;
-  /* Lavanda da sua paleta para o fundo do contador */
+}
+
+.titulo {
+  color: #ff7444; /* Seu Coral */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0px #fff;
+  text-align: center;
+}
+
+/* Faz o título balançar levemente como um balão */
+@keyframes balanco {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#countdown-p {
+  /* Mantendo o estilo que já criamos */
   background-color: #b7bdf7;
+  color: #576a8f;
+  padding: 20px 40px;
   border-radius: 30px;
-  /* Sombra suave para parecer um adesivo/botão */
+  font-size: 3rem;
+  display: inline-block; /* Garante que o fundo envolva o texto */
   box-shadow: 0 10px 0 #576a8f;
-  border: 5px solid #fff;
-  min-width: 600px;
-  white-space: nowrap;
   font-variant-numeric: tabular-nums;
+  margin: 0 auto;
+}
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  h1 {
+    top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  #countdown-p {
+    padding: 15px 30px;
+    font-size: 2rem;
+    box-shadow: 0 8px 0 #576a8f;
+  }
+}
+
+/* Media Query para celulares pequenos */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    top: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .titulo {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  #countdown-p {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 0 #576a8f;
+  }
 }
