@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: #fff8de;
+  font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  position: absolute;
+  top: 3rem;
+  font-size: 2rem;
+  color: #576a8f;
+  margin-bottom: 3rem;
+}
+
+#countdown-p {
+  color: #576a8f;
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 40px;
+  /* Lavanda da sua paleta para o fundo do contador */
+  background-color: #b7bdf7;
+  border-radius: 30px;
+  /* Sombra suave para parecer um adesivo/botão */
+  box-shadow: 0 10px 0 #576a8f;
+  border: 5px solid #fff;
+  min-width: 600px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
