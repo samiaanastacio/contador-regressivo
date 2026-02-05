@@ -11,100 +11,101 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3rem;
+  padding: 2rem;
   background-color: #fff8de;
+  background-image: url("cloud.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: "Quicksand", sans-serif;
   min-height: 100vh;
 }
 
-h1 {
-  position: absolute;
-  top: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: #576a8f;
-  margin-bottom: 3rem;
-}
-
-.container {
-  text-align: center;
-}
-
 .titulo {
-  color: #ff7444; /* Seu Coral */
+  color: #ffffff;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 0px #fff;
+  margin-bottom: 2rem;
   text-align: center;
+  background-color: rgba(40, 55, 85, 0.55);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(40, 55, 85, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  /* Animação existente */
+  animation: balanco 3s ease-in-out infinite;
 }
 
-/* Faz o título balançar levemente como um balão */
+/* Container que segura os 4 blocos */
+.contador-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Para quebrar linha no celular se precisar */
+}
+
+/* Estilo de cada bloco (Dia, Hora, etc) */
+.bloco {
+  background-color: #b7bdf7;
+  color: #576a8f;
+  padding: 1.5rem;
+  border-radius: 20px;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 8px 0 #576a8f;
+  border: 4px solid #fff;
+}
+
+/* O número grande dentro do bloco */
+.bloco span {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A legenda (Dias, Horas...) */
+.bloco p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #576a8f;
+  opacity: 0.8;
+}
+
 @keyframes balanco {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
 }
 
-#countdown-p {
-  /* Mantendo o estilo que já criamos */
-  background-color: #b7bdf7;
-  color: #576a8f;
-  padding: 20px 40px;
-  border-radius: 30px;
-  font-size: 3rem;
-  display: inline-block; /* Garante que o fundo envolva o texto */
-  box-shadow: 0 10px 0 #576a8f;
-  font-variant-numeric: tabular-nums;
-  margin: 0 auto;
-}
+/* --- Media Queries Ajustadas --- */
 
-/* Media Query para dispositivos móveis */
-@media (max-width: 768px) {
-  body {
-    padding: 2rem;
-  }
-
-  h1 {
-    top: 1rem;
-    font-size: 1.5rem;
-  }
-
+@media (max-width: 600px) {
   .titulo {
     font-size: 1.8rem;
-    margin-bottom: 15px;
   }
 
-  #countdown-p {
-    padding: 15px 30px;
-    font-size: 2rem;
-    box-shadow: 0 8px 0 #576a8f;
+  .contador-container {
+    gap: 0.5rem;
   }
-}
 
-/* Media Query para celulares pequenos */
-@media (max-width: 480px) {
-  body {
+  .bloco {
+    min-width: 80px;
     padding: 1rem;
   }
 
-  h1 {
-    top: 0.5rem;
-    font-size: 1.2rem;
+  .bloco span {
+    font-size: 1.8rem;
   }
 
-  .titulo {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-
-  #countdown-p {
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    box-shadow: 0 5px 0 #576a8f;
+  .bloco p {
+    font-size: 0.7rem;
   }
 }
